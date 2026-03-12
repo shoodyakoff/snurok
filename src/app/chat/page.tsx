@@ -698,7 +698,9 @@ export default function ChatPage() {
       </div>
 
       {/* ─── Правая колонка (desktop) / полноэкранный контент (mobile) ─── */}
-      <div className="flex-1 flex flex-col overflow-hidden">
+      <div className={`flex flex-col overflow-hidden lg:flex-1 ${
+        phase === 'loading' || phase === 'results' || phase === 'empty' ? 'flex-1' : ''
+      }`}>
         {/* Mobile: экраны loading/results/empty поверх чата */}
         <div className="lg:hidden flex-1 flex flex-col overflow-hidden">
           {renderMobileContent()}
