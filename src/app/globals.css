@@ -32,19 +32,7 @@ body {
 }
 
 /* Неровная подсветка для акцентов в заголовках */
-.rough-highlight {
-  display: inline;
-  padding: 0 0.18em;
-  box-decoration-break: clone;
-  -webkit-box-decoration-break: clone;
-  background: linear-gradient(
-    transparent 28%,
-    rgba(244, 97, 78, 0.38) 30%,
-    rgba(244, 97, 78, 0.38) 70%,
-    transparent 72%
-  );
-  box-shadow: 0 0 10px rgba(244, 97, 78, 0.25);
-}
+/* highlight styles removed */
 
 /* Скрыть скроллбар в горизонтальных списках */
 .scrollbar-hide {

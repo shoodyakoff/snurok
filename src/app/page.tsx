@@ -28,9 +28,9 @@ export default function LandingPage() {
 
         {/* Заголовок */}
         <h1 className="font-bebas font-extrabold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.03] tracking-wide text-white mb-4 max-w-md lg:max-w-2xl">
-          {'ЗА 2 МИНУТЫ ПОДБЕРЕМ '}
-          <span className="rough-highlight sm:whitespace-nowrap">ИДЕАЛЬНЫЕ КРОССОВКИ</span>
-          {' ПОД ТВОЮ ЗАДАЧУ'}
+          ЗА 2 МИНУТЫ ПОДБЕРЕМ{' '}
+          <span className="text-coral sm:whitespace-nowrap">ИДЕАЛЬНЫЕ КРОССОВКИ</span>
+          {' '}ПОД ТВОЮ ЗАДАЧУ
         </h1>
 
         {/* Подзаголовок */}

@@ -13,6 +13,9 @@ const onest = Onest({
 export const metadata: Metadata = {
   title: 'Shnurok — Умный подбор кроссовок',
   description: 'Расскажи что ищешь — подберем кроссовки за 2 минуты',
+  icons: {
+    icon: { url: '/images/shnurok.svg', type: 'image/svg+xml' },
+  },
 }
 
 export default function RootLayout({
