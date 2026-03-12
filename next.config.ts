@@ -8,6 +8,7 @@ const basePath =
   (isGithubPages && repo ? `/${repo}` : defaultBasePath)
 
 const nextConfig: NextConfig = {
+  output: 'export',
   basePath,
   assetPrefix: basePath || undefined,
   trailingSlash: true,
