@@ -33,23 +33,17 @@ body {
 
 /* Неровная подсветка для акцентов в заголовках */
 .rough-highlight {
-  position: relative;
-  display: inline-block;
-  z-index: 0;
-}
-.rough-highlight::before {
-  content: '';
-  position: absolute;
-  left: -0.15em;
-  right: -0.15em;
-  top: 50%;
-  height: 0.9em;
-  transform: translateY(-50%) rotate(-1deg) skewX(-2deg);
-  background: rgba(244, 97, 78, 0.35);
-  filter: blur(6px);
-  border-radius: 16px 24px 18px 12px;
-  clip-path: polygon(2% 22%, 98% 6%, 96% 82%, 4% 96%);
-  z-index: -1;
+  display: inline;
+  padding: 0 0.18em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  background: linear-gradient(
+    transparent 28%,
+    rgba(244, 97, 78, 0.38) 30%,
+    rgba(244, 97, 78, 0.38) 70%,
+    transparent 72%
+  );
+  box-shadow: 0 0 10px rgba(244, 97, 78, 0.25);
 }
 
 /* Скрыть скроллбар в горизонтальных списках */
