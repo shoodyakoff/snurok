@@ -6,6 +6,7 @@ const onest = Onest({
   subsets: ['latin', 'cyrillic'],
   weight: ['400', '500', '600', '700', '800'],
   variable: '--font-onest',
+  preload: true,
   display: 'swap',
 })
 
@@ -21,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru" className={onest.variable}>
-      <body>{children}</body>
+      <body className="font-onest">{children}</body>
     </html>
   )
 }

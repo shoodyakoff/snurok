@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { withBasePath } from '@/lib/paths'
 
 export default function LandingPage() {
   return (
@@ -17,17 +18,19 @@ export default function LandingPage() {
 
         {/* Логотип */}
         <div className="mb-7 lg:mb-6">
-          <div className="font-bebas text-6xl sm:text-7xl lg:text-6xl xl:text-7xl tracking-widest text-white leading-none">
-            SHNUROK
-          </div>
-          <div className="text-xs font-bold text-sky tracking-[4px] uppercase mt-1">
-            Sneaker Collection
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={withBasePath('/images/shnurok-wordmark.svg')}
+            alt="Shnurok"
+            className="h-11 sm:h-12 lg:h-11 xl:h-12 w-auto"
+          />
         </div>
 
         {/* Заголовок */}
         <h1 className="font-bebas font-extrabold text-4xl sm:text-5xl lg:text-5xl xl:text-6xl leading-[1.03] tracking-wide text-white mb-4 max-w-md lg:max-w-2xl">
-          ЗА 2 МИНУТЫ ПОДБЕРЕМ КРОССОВКИ, КОТОРЫЕ ИДЕАЛЬНО СЯДУТ
+          {'ЗА 2 МИНУТЫ ПОДБЕРЕМ '}
+          <span className="rough-highlight whitespace-nowrap">ИДЕАЛЬНЫЕ КРОССОВКИ</span>
+          {' ПОД ТВОЮ ЗАДАЧУ'}
         </h1>
 
         {/* Подзаголовок */}
@@ -65,9 +68,9 @@ export default function LandingPage() {
           {/* Превью карточек */}
           <div className="space-y-2.5">
             {[
-              { brand: 'Nike', name: 'Air Force 1 \'07 White', price: '9 500 р', badge: 'хит', imageUrl: '/images/sneaker-1.jpg' },
-              { brand: 'Adidas', name: 'Stan Smith Cloud White', price: '8 200 р', badge: null, imageUrl: '/images/sneaker-2.jpg' },
-              { brand: 'New Balance', name: '327 White Grey', price: '10 900 р', badge: null, imageUrl: '/images/sneaker-3.jpg' },
+              { brand: 'Nike', name: 'Air Force 1 \'07 White', price: '9 500 р', badge: 'хит', imageUrl: withBasePath('/images/sneaker-1.jpg') },
+              { brand: 'Adidas', name: 'Stan Smith Cloud White', price: '8 200 р', badge: null, imageUrl: withBasePath('/images/sneaker-2.jpg') },
+              { brand: 'New Balance', name: '327 White Grey', price: '10 900 р', badge: null, imageUrl: withBasePath('/images/sneaker-3.jpg') },
             ].map((card) => (
               <div
                 key={card.name}
@@ -102,7 +105,7 @@ export default function LandingPage() {
 
           {/* Подпись */}
           <p className="text-center text-gray-text text-xs font-semibold mt-5 tracking-wide">
-            Подборка сформирована под твои параметры
+            Твои идеальные кроссовки будут тут
           </p>
         </div>
       </div>

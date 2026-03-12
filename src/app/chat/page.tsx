@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import type { Criteria, Message, ProductGroup, ChatPhase } from '@/lib/types'
+import { withBasePath } from '@/lib/paths'
 
 // ─── Начальное состояние критериев ───────────────────────────────────────────
 
@@ -22,13 +23,13 @@ const MOCK_GROUPS: ProductGroup[] = [
     title: 'ТОЧНОЕ ПОПАДАНИЕ',
     description: 'Лучшее совпадение по запросу и бюджету',
     products: [
-      { id: '1', brand: 'Nike', name: "Air Force 1 '07 White", price: 9500, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-1.jpg', badge: 'хит' },
-      { id: '2', brand: 'Adidas', name: 'Stan Smith Cloud White', price: 8200, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
-      { id: '3', brand: 'New Balance', name: '327 White Grey', price: 10900, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '4', brand: 'Puma', name: 'Cali Star White', price: 9900, sizes: ['40', '41', '42'], imageUrl: '/images/sneaker-1.jpg' },
-      { id: '5', brand: 'Reebok', name: 'Club C 85 Chalk', price: 8700, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
-      { id: '6', brand: 'Asics', name: 'Japan S White', price: 9100, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '7', brand: 'Nike', name: 'Court Vision Low White', price: 7800, sizes: ['40', '41', '42'], imageUrl: '/images/sneaker-1.jpg' },
+      { id: '1', brand: 'Nike', name: "Air Force 1 '07 White", price: 9500, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-1.jpg'), badge: 'хит' },
+      { id: '2', brand: 'Adidas', name: 'Stan Smith Cloud White', price: 8200, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
+      { id: '3', brand: 'New Balance', name: '327 White Grey', price: 10900, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '4', brand: 'Puma', name: 'Cali Star White', price: 9900, sizes: ['40', '41', '42'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
+      { id: '5', brand: 'Reebok', name: 'Club C 85 Chalk', price: 8700, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
+      { id: '6', brand: 'Asics', name: 'Japan S White', price: 9100, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '7', brand: 'Nike', name: 'Court Vision Low White', price: 7800, sizes: ['40', '41', '42'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
     ],
   },
   {
@@ -36,13 +37,13 @@ const MOCK_GROUPS: ProductGroup[] = [
     title: 'ЧУТЬ ДОРОЖЕ, НО СТОИТ ТОГО',
     description: '+15–25% к бюджету — топ‑рейтинг и материалы',
     products: [
-      { id: '8', brand: 'Nike', name: 'Dunk Low Retro White Black', price: 13500, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg', badge: 'топ' },
-      { id: '9', brand: 'Converse', name: 'Chuck 70 Hi White', price: 14000, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '10', brand: 'Adidas', name: 'Samba OG White', price: 14900, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-1.jpg' },
-      { id: '11', brand: 'New Balance', name: '550 White Green', price: 15800, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
-      { id: '12', brand: 'Nike', name: 'Air Max 90 White', price: 16200, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '13', brand: 'Asics', name: 'Gel-Kayano 14 White Silver', price: 17500, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-1.jpg' },
-      { id: '14', brand: 'Onitsuka', name: 'Mexico 66 SD White', price: 15200, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
+      { id: '8', brand: 'Nike', name: 'Dunk Low Retro White Black', price: 13500, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg'), badge: 'топ' },
+      { id: '9', brand: 'Converse', name: 'Chuck 70 Hi White', price: 14000, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '10', brand: 'Adidas', name: 'Samba OG White', price: 14900, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
+      { id: '11', brand: 'New Balance', name: '550 White Green', price: 15800, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
+      { id: '12', brand: 'Nike', name: 'Air Max 90 White', price: 16200, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '13', brand: 'Asics', name: 'Gel-Kayano 14 White Silver', price: 17500, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
+      { id: '14', brand: 'Onitsuka', name: 'Mexico 66 SD White', price: 15200, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
     ],
   },
   {
@@ -50,13 +51,13 @@ const MOCK_GROUPS: ProductGroup[] = [
     title: 'АЛЬТЕРНАТИВНЫЙ ВАРИАНТ',
     description: 'Похожие по стилю и посадке, но другой акцент',
     products: [
-      { id: '15', brand: 'Vans', name: 'Old Skool Black White', price: 7900, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '16', brand: 'New Balance', name: '574 Grey Day', price: 9800, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-1.jpg' },
-      { id: '17', brand: 'Adidas', name: 'Gazelle Grey', price: 9200, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
-      { id: '18', brand: 'Nike', name: 'Blazer Low White', price: 8600, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
-      { id: '19', brand: 'Puma', name: 'Suede Classic Grey', price: 8400, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-1.jpg' },
-      { id: '20', brand: 'Reebok', name: 'Classic Leather Grey', price: 9000, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-2.jpg' },
-      { id: '21', brand: 'Saucony', name: 'Jazz Original Grey', price: 8800, sizes: ['41', '42', '43'], imageUrl: '/images/sneaker-3.jpg' },
+      { id: '15', brand: 'Vans', name: 'Old Skool Black White', price: 7900, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '16', brand: 'New Balance', name: '574 Grey Day', price: 9800, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
+      { id: '17', brand: 'Adidas', name: 'Gazelle Grey', price: 9200, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
+      { id: '18', brand: 'Nike', name: 'Blazer Low White', price: 8600, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
+      { id: '19', brand: 'Puma', name: 'Suede Classic Grey', price: 8400, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-1.jpg') },
+      { id: '20', brand: 'Reebok', name: 'Classic Leather Grey', price: 9000, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-2.jpg') },
+      { id: '21', brand: 'Saucony', name: 'Jazz Original Grey', price: 8800, sizes: ['41', '42', '43'], imageUrl: withBasePath('/images/sneaker-3.jpg') },
     ],
   },
 ]
